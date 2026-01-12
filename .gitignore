@@ -1,0 +1,27 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+build/
+
+# Android related
+android/.gradle/
+android/local.properties
+android/key.properties
+android/**/GeneratedPluginRegistrant.java
+
+# iOS related
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+# Flutter SDK (DO NOT COMMIT)
+flutter/
