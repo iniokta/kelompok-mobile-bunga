@@ -9,6 +9,7 @@ class Recipe {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
+
   Recipe({
     required this.id,
     required this.title,
