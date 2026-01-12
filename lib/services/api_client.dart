@@ -43,5 +43,6 @@ class ApiClient {
     if (res.statusCode < 200 || res.statusCode >= 300) {
       throw Exception("HTTP ${res.statusCode}: ${res.body}");
     }
+    
   }
 }
