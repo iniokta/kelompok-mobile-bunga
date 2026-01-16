@@ -105,7 +105,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   child: Image.network(
                     r.imageUrl,
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) =>
+                    errorBuilder: (_, __,_
+) =>
                         Container(color: Colors.black12, child: const Center(child: Icon(Icons.image))),
                   ),
                 ),
