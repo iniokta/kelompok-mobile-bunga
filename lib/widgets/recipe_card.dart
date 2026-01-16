@@ -21,7 +21,7 @@ class RecipeCard extends StatelessWidget {
               child: Image.network(
                 recipe.imageUrl,
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => const Center(child: Icon(Icons.image_not_supported)),
+                errorBuilder: (_, _, _) => const Center(child: Icon(Icons.image_not_supported)),
               ),
             ),
             Expanded(

@@ -78,7 +78,7 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
           return ListView.separated(
             padding: const EdgeInsets.all(12),
             itemCount: _recipes.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (_, _) => const SizedBox(height: 8),
             itemBuilder: (_, i) {
               final r = _recipes[i];
               return RecipeCard(
