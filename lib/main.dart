@@ -12,22 +12,20 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-  debugShowCheckedModeBanner: false,
-  title: 'Kelompok Mobile Bunga',
-  theme: ThemeData(
-    useMaterial3: true,
-    primaryColor: Colors.pink,
-    appBarTheme: const AppBarTheme(
-      centerTitle: true,
-      backgroundColor: Colors.pink,
-      foregroundColor: Colors.white,
-      elevation: 2,
-    ),
-  ),
-  home: const MyHomePage(), // sesuaikan sama home kamu
-);
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Kelompok Mobile Bunga',
+      theme: ThemeData(
+        useMaterial3: true,
+        primaryColor: Colors.pink,
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          backgroundColor: Colors.pink,
+          foregroundColor: Colors.white,
+          elevation: 2,
+        ),
+      ),
+      home: const RecipeListScreen(),
+    );
   }
-  
 }
