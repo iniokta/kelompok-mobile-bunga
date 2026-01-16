@@ -14,3 +14,15 @@ Buka terminal di folder project, lalu jalankan:
 ```bash
 flutter pub get
 flutter run
+
+## Struktur Folder
+
+Berikut struktur folder utama pada project ini:
+
+lib/
+├─ core/ # konfigurasi/konstanta/helper (jika ada)
+├─ models/ # model data (class/response)
+├─ screens/ # halaman UI (login, home, detail, dll)
+├─ services/ # layanan API / database / request (contoh: api_client.dart)
+├─ widgets/ # widget kecil reusable (button, card, dll)
+└─ main.dart # entry point aplikasi
