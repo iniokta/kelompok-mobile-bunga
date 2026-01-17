@@ -1,0 +1,253 @@
+{
+  "info": {
+    "name": "Recipe API",
+    "description": "API Documentation for Recipe Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/recipes",
+          "host": ["{{baseUrl}}"],
+          "path": ["recipes"]
+        },
+        "description": "Retrieve all recipes from the database"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recipes",
+              "host": ["{{baseUrl}}"],
+              "path": ["recipes"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": \"1\",\n      \"title\": \"Nasi Goreng Spesial\",\n      \"category\": \"Main Course\",\n      \"timeMinutes\": 30,\n      \"imageUrl\": \"https://example.com/images/nasi-goreng.jpg\",\n      \"ingredients\": [\n        \"2 cups cooked rice\",\n        \"2 eggs\",\n        \"3 cloves garlic\",\n        \"1 onion\",\n        \"2 tbsp soy sauce\",\n        \"vegetables\"\n      ],\n      \"steps\": [\n        \"Heat oil in a wok\",\n        \"Fry garlic and onion until fragrant\",\n        \"Add eggs and scramble\",\n        \"Add rice and soy sauce\",\n        \"Stir fry for 5 minutes\",\n        \"Serve hot\"\n      ],\n      \"createdAt\": \"2025-01-15T10:30:00Z\",\n      \"updatedAt\": \"2025-01-16T14:20:00Z\"\n    },\n    {\n      \"id\": \"2\",\n      \"title\": \"Rendang Sapi\",\n      \"category\": \"Main Course\",\n      \"timeMinutes\": 240,\n      \"imageUrl\": \"https://example.com/images/rendang.jpg\",\n      \"ingredients\": [\n        \"1 kg beef\",\n        \"400ml coconut milk\",\n        \"lemongrass\",\n        \"galangal\",\n        \"spices\"\n      ],\n      \"steps\": [\n        \"Marinate beef with spices\",\n        \"Cook with coconut milk on low heat\",\n        \"Simmer for 3-4 hours until tender\",\n        \"Serve with steamed rice\"\n      ],\n      \"createdAt\": \"2025-01-10T08:00:00Z\",\n      \"updatedAt\": \"2025-01-10T08:00:00Z\"\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Recipe by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/recipes/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["recipes", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1",
+              "description": "Recipe ID"
+            }
+          ]
+        },
+        "description": "Get a specific recipe by its ID"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recipes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["recipes", "1"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"title\": \"Nasi Goreng Spesial\",\n    \"category\": \"Main Course\",\n    \"timeMinutes\": 30,\n    \"imageUrl\": \"https://example.com/images/nasi-goreng.jpg\",\n    \"ingredients\": [\n      \"2 cups cooked rice\",\n      \"2 eggs\",\n      \"3 cloves garlic\",\n      \"1 onion\",\n      \"2 tbsp soy sauce\",\n      \"vegetables\"\n    ],\n    \"steps\": [\n      \"Heat oil in a wok\",\n      \"Fry garlic and onion until fragrant\",\n      \"Add eggs and scramble\",\n      \"Add rice and soy sauce\",\n      \"Stir fry for 5 minutes\",\n      \"Serve hot\"\n    ],\n    \"createdAt\": \"2025-01-15T10:30:00Z\",\n    \"updatedAt\": \"2025-01-16T14:20:00Z\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Recipe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sate Ayam\",\n  \"category\": \"Appetizer\",\n  \"timeMinutes\": 45,\n  \"imageUrl\": \"https://example.com/images/sate-ayam.jpg\",\n  \"ingredients\": [\n    \"500g chicken breast\",\n    \"3 tbsp sweet soy sauce\",\n    \"2 cloves garlic\",\n    \"1 tbsp lime juice\",\n    \"skewers\"\n  ],\n  \"steps\": [\n    \"Cut chicken into cubes\",\n    \"Marinate with soy sauce, garlic, and lime\",\n    \"Thread onto skewers\",\n    \"Grill until cooked through\",\n    \"Serve with peanut sauce\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/recipes",
+          "host": ["{{baseUrl}}"],
+          "path": ["recipes"]
+        },
+        "description": "Create a new recipe"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Sate Ayam\",\n  \"category\": \"Appetizer\",\n  \"timeMinutes\": 45,\n  \"imageUrl\": \"https://example.com/images/sate-ayam.jpg\",\n  \"ingredients\": [\n    \"500g chicken breast\",\n    \"3 tbsp sweet soy sauce\",\n    \"2 cloves garlic\",\n    \"1 tbsp lime juice\",\n    \"skewers\"\n  ],\n  \"steps\": [\n    \"Cut chicken into cubes\",\n    \"Marinate with soy sauce, garlic, and lime\",\n    \"Thread onto skewers\",\n    \"Grill until cooked through\",\n    \"Serve with peanut sauce\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recipes",
+              "host": ["{{baseUrl}}"],
+              "path": ["recipes"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"3\",\n    \"title\": \"Sate Ayam\",\n    \"category\": \"Appetizer\",\n    \"timeMinutes\": 45,\n    \"imageUrl\": \"https://example.com/images/sate-ayam.jpg\",\n    \"ingredients\": [\n      \"500g chicken breast\",\n      \"3 tbsp sweet soy sauce\",\n      \"2 cloves garlic\",\n      \"1 tbsp lime juice\",\n      \"skewers\"\n    ],\n    \"steps\": [\n      \"Cut chicken into cubes\",\n      \"Marinate with soy sauce, garlic, and lime\",\n      \"Thread onto skewers\",\n      \"Grill until cooked through\",\n      \"Serve with peanut sauce\"\n    ],\n    \"createdAt\": \"2025-01-17T12:00:00Z\",\n    \"updatedAt\": \"2025-01-17T12:00:00Z\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Recipe",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sate Ayam Madura\",\n  \"category\": \"Main Course\",\n  \"timeMinutes\": 60,\n  \"imageUrl\": \"https://example.com/images/sate-ayam-madura.jpg\",\n  \"ingredients\": [\n    \"500g chicken thigh\",\n    \"3 tbsp sweet soy sauce\",\n    \"2 cloves garlic\",\n    \"1 tbsp lime juice\",\n    \"ground peanuts\",\n    \"skewers\"\n  ],\n  \"steps\": [\n    \"Cut chicken into cubes\",\n    \"Marinate overnight with spices\",\n    \"Thread onto bamboo skewers\",\n    \"Grill over charcoal\",\n    \"Serve with peanut sauce and rice cakes\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/recipes/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["recipes", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "3",
+              "description": "Recipe ID to update"
+            }
+          ]
+        },
+        "description": "Update an existing recipe"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Sate Ayam Madura\",\n  \"category\": \"Main Course\",\n  \"timeMinutes\": 60,\n  \"imageUrl\": \"https://example.com/images/sate-ayam-madura.jpg\",\n  \"ingredients\": [\n    \"500g chicken thigh\",\n    \"3 tbsp sweet soy sauce\",\n    \"2 cloves garlic\",\n    \"1 tbsp lime juice\",\n    \"ground peanuts\",\n    \"skewers\"\n  ],\n  \"steps\": [\n    \"Cut chicken into cubes\",\n    \"Marinate overnight with spices\",\n    \"Thread onto bamboo skewers\",\n    \"Grill over charcoal\",\n    \"Serve with peanut sauce and rice cakes\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recipes/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["recipes", "3"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"3\",\n    \"title\": \"Sate Ayam Madura\",\n    \"category\": \"Main Course\",\n    \"timeMinutes\": 60,\n    \"imageUrl\": \"https://example.com/images/sate-ayam-madura.jpg\",\n    \"ingredients\": [\n      \"500g chicken thigh\",\n      \"3 tbsp sweet soy sauce\",\n      \"2 cloves garlic\",\n      \"1 tbsp lime juice\",\n      \"ground peanuts\",\n      \"skewers\"\n    ],\n    \"steps\": [\n      \"Cut chicken into cubes\",\n      \"Marinate overnight with spices\",\n      \"Thread onto bamboo skewers\",\n      \"Grill over charcoal\",\n      \"Serve with peanut sauce and rice cakes\"\n    ],\n    \"createdAt\": \"2025-01-17T12:00:00Z\",\n    \"updatedAt\": \"2025-01-17T15:30:00Z\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/recipes/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["recipes", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "3",
+              "description": "Recipe ID to delete"
+            }
+          ]
+        },
+        "description": "Delete a recipe by ID"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recipes/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["recipes", "3"]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "plain",
+          "header": [],
+          "body": ""
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-api-url.com",
+      "type": "string"
+    }
+  ]
+}
